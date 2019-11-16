@@ -1,0 +1,2 @@
+class FacclonesController < ApplicationController
+end
