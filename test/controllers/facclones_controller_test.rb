@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class FacclonesControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get index" do
+    get facclones_index_url
+    assert_response :success
+  end
+
 end

@@ -1,0 +1,2 @@
+class Facclone < ApplicationRecord
+end
