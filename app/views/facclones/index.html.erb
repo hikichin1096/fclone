@@ -1,1 +1,6 @@
-<p>Facebookクローン</p>
+<h1>FaceBookクローン</h1>
+<% @facclones.each do |facclone| %>
+  <tr>
+    <td><%= facclone.content %></td>
+  </tr>
+<% end %>

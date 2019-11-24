@@ -1,5 +1,6 @@
 class FacclonesController < ApplicationController
   def index
+    @facclones = Facclone.all
   end
 
   def new
