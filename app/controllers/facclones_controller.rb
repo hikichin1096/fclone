@@ -13,6 +13,10 @@ class FacclonesController < ApplicationController
     redirect_to new_facclone_path
   end
 
+  def show
+    @facclone = Facclone.find(params[:id])
+  end
+
   private
 
   def facclone_params

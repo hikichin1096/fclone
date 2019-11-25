@@ -2,5 +2,6 @@
 <% @facclones.each do |facclone| %>
   <tr>
     <td><%= facclone.content %></td>
+    <td><%= link_to '詳細画面へ', facclone_path(facclone.id) %></td>
   </tr>
 <% end %>
