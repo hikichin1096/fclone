@@ -7,10 +7,29 @@ class FacclonesController < ApplicationController
     @facclone = Facclone.new
   end
 
+  #編集
+  def edit
+    @facclone = Facclone.find(params[:id])
+  end
+
+  #更新
+  def update
+    @facclone = Facclone.find(params[:id])
+    if @facclone.update(facclone_params)
+      redirect_to facclones_path, notice:'編集完了'
+    else
+      render :edit
+    end
+  end
+
   def create
-    #@facclone = Facclone.create(content: params[:facclone][:content])
-    Facclone.create(facclone_params)
-    redirect_to new_facclone_path
+    @facclone = Facclone.create(facclone_params)
+
+    if @facclone.save
+      redirect_to new_facclone_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,5 +41,4 @@ class FacclonesController < ApplicationController
   def facclone_params
     params.require(:facclone).permit(:content)
   end
-
 end
