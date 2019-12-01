@@ -1,8 +1,19 @@
+<body>
+
 <h1>FaceBookクローン</h1>
+
+<!-- 画面表示メッセージ表示 -->
+<p><%= notice %></p>
+
+<td><%= link_to '新規投稿', new_facclone_path %></td>
+
 <% @facclones.each do |facclone| %>
   <tr>
     <td><%= facclone.content %></td>
     <td><%= link_to '詳細画面へ', facclone_path(facclone.id) %></td>
     <td><%= link_to "編集画面へ", edit_facclone_path(facclone.id) %><td>
+    <td><%= link_to '削除する', facclone_path(facclone.id), method: :delete %><td>
   </tr>
 <% end %>
+
+</<body>
